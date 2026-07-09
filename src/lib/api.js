@@ -115,13 +115,6 @@ class APIClient {
     return this.request('/depots/');
   }
 
-  async createDepot(montant, idtransaction = null) {
-    return this.request('/depots/', {
-      method: 'POST',
-      body: JSON.stringify({ montant, idtransaction }),
-    });
-  }
-
   async getRetraits() {
     return this.request('/retraits/');
   }
@@ -136,9 +129,9 @@ class APIClient {
   async getParrainageSummary() {
     return this.request('/parrainages/summary/');
   }
-}
 
-async getDepotConfigs() {
+  // --- LES MÉTHODES SONT MAINTENANT BIEN INTÉGRÉES DANS LA CLASSE ---
+  async getDepotConfigs() {
     return this.request('/depots/configurations-actives/');
   }
 
