@@ -11,14 +11,9 @@
 
   onMount(async () => {
     try {
-      // Appel de la nouvelle route ajoutée à api.py
-      // Note: Ajustez le chemin de l'appel api en fonction de votre fichier lib/api.js
-      const response = await fetch('/api/depots/configurations-actives/'); 
-      if (response.ok) {
-        configurationsPaiement = await response.json();
-      }
+      configurationsPaiement = await api.getDepotConfigs();
     } catch (error) {
-      console.error("Impossible de récupérer les configurations de paiement", error);
+      showToast("Impossible de récupérer les instructions de paiement.", 'error');
     }
   });
 
@@ -125,7 +120,7 @@
             bind:value={idtransaction}
             required
           />
-          <small class="ff-hint ff-hint--danger">Un identifiant exact accélère le traitement manuel de votre dépôt.</small>
+          <small class="ff-hint ff-hint--danger">Un identifiant exact accélère le traitement de votre dépôt.</small>
         </div>
 
         <button 
