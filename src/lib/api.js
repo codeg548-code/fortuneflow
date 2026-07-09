@@ -138,4 +138,16 @@ class APIClient {
   }
 }
 
+async getDepotConfigs() {
+    return this.request('/depots/configurations-actives/');
+  }
+
+  async createDepot(payload) {
+    return this.request('/depots/', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+  }
+}
+
 export const api = new APIClient();
