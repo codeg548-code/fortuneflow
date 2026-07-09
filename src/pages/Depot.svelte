@@ -144,7 +144,7 @@
   .active-mtn { border-color: #ffcc00; background-color: #fffdf0; color: #b38f00; }
   .active-orange { border-color: #ff6600; background-color: #fff6f0; color: #cc5200; }
   
-  .ff-instruction-card { padding: 1rem; border-radius: 8px; margin-top: 0.5rem; font-size: 0.9rem; }
+  .ff-instruction-card { padding: 1rem; border-radius: 8px; margin-top: 0.5rem; font-size: 0.9rem; color: #1a1a1a; }
   .ff-provider--mtn { background-color: #fffdf0; border-left: 4px solid #ffcc00; }
   .ff-provider--orange { background-color: #fff6f0; border-left: 4px solid #ff6600; }
   
