@@ -25,7 +25,7 @@
   <PageHeader
     title="Packs"
     highlight="disponibles"
-    //subtitle="Stock limité — disponibilité en temps réel."
+    <!--subtitle="Stock limité — disponibilité en temps réel."-->
   />
 
   <div class="ff-page__content">
@@ -48,10 +48,10 @@
             <div>Revenu : <strong>{pack.gainJr} F/jr</strong></div>
             <div>Durée : <strong>{pack.duree} jours</strong></div>
             <div class="ff-pack-stock">
-              //<span
+              <!--<span
                 //>Disponibles : <strong>{pack.stock_disponible ?? '—'}</strong> /
                 //<strong>{pack.stock_initial ?? '—'}</strong></span
-              //>
+              //> -->
               <span class="ff-stock-bar" aria-hidden="true">
                 <span class="ff-stock-bar__fill" style="width: {stockWidth(pack)}%"></span>
               </span>
