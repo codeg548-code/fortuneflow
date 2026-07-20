@@ -1,0 +1,40 @@
+{
+  "name": "FortuneFlow Investissement",
+  "short_name": "FortuneFlow",
+  "description": "Prenez le contrôle de vos finances avec FortuneFlow, l’écosystème sécurisé qui simplifie l'investissement en ligne et maximise la gestion de vos packs de revenus.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111d24",
+  "theme_color": "#4a9f5b",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "productivity"],
+  "icons": [
+    {
+      "src": "/static/finance/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/finance/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/finance/images/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "share_target": {
+    "action": "/#/signup",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
