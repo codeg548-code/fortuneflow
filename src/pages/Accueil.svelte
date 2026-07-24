@@ -7,10 +7,26 @@
   let dashboard = null;
 
   onMount(async () => {
+    // 1. Lecture instantanée depuis le cache local (SWR)
     try {
-      dashboard = await api.getDashboard();
+      const cached = sessionStorage.getItem('dashboard_data');
+      if (cached) {
+        dashboard = JSON.parse(cached);
+      }
+    } catch (e) {
+      sessionStorage.removeItem('dashboard_data');
+    }
+
+    // 2. Fetch en arrière-plan pour synchronisation
+    try {
+      const freshData = await api.getDashboard();
+      dashboard = freshData;
+      sessionStorage.setItem('dashboard_data', JSON.stringify(freshData));
     } catch (error) {
-      showToast(error.message, 'error');
+      // En cas d'erreur réseau, si le cache n'existait pas, on notifie l'utilisateur
+      if (!dashboard) {
+        showToast(error.message, 'error');
+      }
     }
   });
 
