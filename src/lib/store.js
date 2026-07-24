@@ -18,9 +18,23 @@ export function dismissToast(id) {
   toasts.update((items) => items.filter((t) => t.id !== id));
 }
 
+/**
+ * Nettoie le cache du tableau de bord stocké dans le navigateur.
+ * À utiliser lors de la déconnexion, du changement de compte ou après
+ * des opérations financières (achat de pack, demande de retrait, etc.).
+ */
+export function clearDashboardCache() {
+  try {
+    sessionStorage.removeItem('dashboard_data');
+  } catch (e) {
+    console.error('Erreur lors du nettoyage de sessionStorage:', e);
+  }
+}
+
 export async function loadUser() {
   if (!api.token) {
     user.set(null);
+    clearDashboardCache();
     return null;
   }
   try {
@@ -30,24 +44,28 @@ export async function loadUser() {
   } catch {
     api.setToken(null);
     user.set(null);
+    clearDashboardCache();
     return null;
   }
 }
 
 export async function login(numero, mdp) {
   const data = await api.login(numero, mdp);
+  clearDashboardCache();
   user.set(data.user);
   return data;
 }
 
 export async function signup(payload, ref = null) {
   const data = await api.signup(payload, ref);
+  clearDashboardCache();
   user.set(data.user);
   return data;
 }
 
 export async function logout() {
   await api.logout();
+  clearDashboardCache();
   user.set(null);
 }
 
