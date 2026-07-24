@@ -199,10 +199,10 @@
         </button>
         <p class="ff-modal-title">Contactez le service client</p>
         <div class="ff-service-grid">
-          <a href="https://t.me/672870153" target="_blank" rel="noopener">
+          <a href="https://t.me/+oq79rGNC3OE3NzE0" target="_blank" rel="noopener">
             <img src="/static/finance/images/telegram.jpg" alt="Telegram" />
           </a>
-          <a href="https://wa.me/672870153" target="_blank" rel="noopener">
+          <a href="https://wa.me/14343834994" target="_blank" rel="noopener">
             <img src="/static/finance/images/whatsapp.jpg" alt="WhatsApp" />
           </a>
         </div>
